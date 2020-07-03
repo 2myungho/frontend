@@ -12,7 +12,7 @@ const RegisterForm = ({ history }) => {
     form: auth.register,
     auth: auth.auth,
     authError: auth.authError,
-    user: user.user
+    user: user.user,
   }));
   // 인풋 변경 이벤트 핸들러
   const onChange = e => {
@@ -21,8 +21,8 @@ const RegisterForm = ({ history }) => {
       changeField({
         form: 'register',
         key: name,
-        value
-      })
+        value,
+      }),
     );
   };
 
@@ -74,10 +74,10 @@ const RegisterForm = ({ history }) => {
   useEffect(() => {
     if (user) {
       history.push('/'); // 홈 화면으로 이동
-      try{
-        localStorage.setItem('user',JSON.stringify(user));
-      }catch(e){
-          console.log('localStorage is not working')
+      try {
+        localStorage.setItem('user', JSON.stringify(user));
+      } catch (e) {
+        console.log('localStorage is not working');
       }
     }
   }, [history, user]);
