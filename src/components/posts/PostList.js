@@ -15,8 +15,15 @@ const WritePostButtonWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-bottom: 3rem;
+  .Button0{
+  background:#a1dba8;
+  &:hover {
+    background: #61caa9;
+  }
+  padding:10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
 `;
-
 const PostItemBlock = styled.div`
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -67,7 +74,7 @@ const PostList = ({ posts, loading, error, showWriteButton }) => {
     <PostListBlock>
       <WritePostButtonWrapper>
         {showWriteButton && (
-          <Button cyan to="/write">
+          <Button className="Button0" cyan to="/write">
             새 글 작성하기
           </Button>
         )}

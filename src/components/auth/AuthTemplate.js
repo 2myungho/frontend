@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import palette from '../../lib/styles/palette';
 import { Link } from 'react-router-dom';
 
 /**
@@ -14,7 +13,7 @@ const AuthTemplateBlock = styled.div`
   top: 0;
   bottom: 0;
   right: 0;
-  background: ${palette.gray[2]};
+  background:#c6ecca;
   /* flex로 내부 내용 중앙 정렬 */
   display: flex;
   flex-direction: column;
@@ -35,7 +34,7 @@ const WhiteBox = styled.div`
   padding: 2rem;
   width: 360px;
   background: white;
-  border-radius: 2px;
+  border-radius: 10px;
 `;
 
 const AuthTemplate = ({ children }) => {
@@ -43,7 +42,7 @@ const AuthTemplate = ({ children }) => {
     <AuthTemplateBlock>
       <WhiteBox>
         <div className="logo-area">
-          <Link to="/">REACTERS</Link>
+          <Link to="/">Lee Community</Link>
         </div>
         {children}
       </WhiteBox>

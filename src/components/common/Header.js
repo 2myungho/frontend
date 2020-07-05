@@ -7,14 +7,15 @@ import Button from './Button';
 const HeaderBlock = styled.div`
   position: fixed;
   width: 100%;
-  background: white;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  background: #a1dba8;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 `;
 
 /**
  * Responsive 컴포넌트의 속성에 스타일을 추가해서 새로운 컴포넌트 생성
  */
 const Wrapper = styled(Responsive)`
+  color:#fff;
   height: 4rem;
   display: flex;
   align-items: center;
@@ -27,6 +28,16 @@ const Wrapper = styled(Responsive)`
   .right {
     display: flex;
     align-items: center;
+    .outBox{
+      border-radius:10px;
+      display: flex;
+      align-items: center;
+      background:#4b9f85;
+      padding: 8px 10px;
+      &:hover{
+        background:#61caa9;
+      }
+    }
   }
 `;
 
@@ -48,16 +59,16 @@ const Header = ({ user, onLogout }) => {
       <HeaderBlock>
         <Wrapper>
           <Link to="/" className="logo">
-            REACTERS
+            Lee Myung Ho
           </Link>
           {user ? (
             <div className="right">
-              <UserInfo>{user.username}</UserInfo>
-              <Button onClick={onLogout}>로그아웃</Button>
+              <UserInfo>{user.username} 님!</UserInfo>
+              <Button onClick={onLogout} className="outBox">LOGOUT</Button>
             </div>
           ) : (
             <div className="right">
-              <Button to="/login">로그인</Button>
+              <Button to="/login" className="outBox">LOGIN</Button>
             </div>
           )}
         </Wrapper>

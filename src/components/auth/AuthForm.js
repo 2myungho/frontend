@@ -39,11 +39,13 @@ const StyledInput = styled.input`
  * 폼 하단에 로그인 혹은 회원가입 링크를 보여줌
  */
 const Footer = styled.div`
+  font-weight:600;
   margin-top: 2rem;
   text-align: right;
   a {
     color: ${palette.gray[6]};
     text-decoration: underline;
+    text-underline-position: under;
     &:hover {
       color: ${palette.gray[9]};
     }
@@ -52,6 +54,10 @@ const Footer = styled.div`
 
 const ButtonWithMarginTop = styled(Button)`
   margin-top: 1rem;
+  background:#61caa9;
+  &:hover{
+    background:#a1dba8;
+  }
 `;
 
 const textMap = {
@@ -67,6 +73,7 @@ const ErrorMessage = styled.div`
   text-align: center;
   font-size: 0.875rem;
   margin-top: 1rem;
+  font-weight:600;
 `;
 
 const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
